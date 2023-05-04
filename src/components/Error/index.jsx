@@ -1,9 +1,38 @@
+import styled from 'styled-components'
+import colors from '../../utils/style/color'
+import Error404 from '../../assets/undraw_page_not_found_su7k 1.svg'
+
+const ErrorWrapper = styled.div`
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: ${colors.background};
+  align-items: center;
+`
+
+const ErrorTitle = styled.h1`
+  font-weight: 300;
+`
+
+const ErrorSubtitle = styled.h2`
+  font-weight: 300;
+  color: ${colors.secondary};
+`
+
+const Illustration = styled.img`
+  max-width: 800px;
+`
+
 function Error() {
-    return (
-      <div>
-        <h1>Oups 🙈 Cette page n'existe pas</h1>
-      </div>
-    )
-  }
-  
-  export default Error
+  return (
+    <ErrorWrapper>
+      <ErrorTitle>Oups...</ErrorTitle>
+      <Illustration src={Error404} />
+      <ErrorSubtitle>
+        Il semblerait que la page que vous cherchez n’existe pas
+      </ErrorSubtitle>
+    </ErrorWrapper>
+  )
+}
+
+export default Error
